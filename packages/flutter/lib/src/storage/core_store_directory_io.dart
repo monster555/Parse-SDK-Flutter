@@ -4,7 +4,13 @@ import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:path/path.dart' as path;
 
+/// A storage directories
 class CoreStoreDirectory {
+  /// Returns the library directory path for the database file on iOS, or
+  /// the documents directory path for other platforms. If the application is
+  /// running on iOS, this function also migrates the database file from the
+  /// documents directory to the library directory. This is done to prevent
+  /// issues with Parse SDK Flutter on iOS.
   Future<String> getDatabaseDirectory() async {
     if (defaultTargetPlatform == TargetPlatform.iOS) {
       await _migrateDBFileToLibraryDirectory();
@@ -15,6 +21,9 @@ class CoreStoreDirectory {
     return (await path_provider.getApplicationDocumentsDirectory()).path;
   }
 
+  /// A migration algorithm for the internal SDK database file on iOS. This
+  /// function moves the database file from the documents directory to the
+  /// library directory to prevent issues with Parse SDK Flutter on iOS.
   /// Migrate SDK internal database file on iOS, see:
   /// https://github.com/parse-community/Parse-SDK-Flutter/issues/791
   /// TODO: Remove this migration algorithm in the future.
@@ -26,6 +35,8 @@ class CoreStoreDirectory {
     }
   }
 
+  /// Returns the database file from the application documents directory if it
+  /// exists, otherwise returns null.
   Future<File?> _getDBFileIfExistsInAppDocDir() async {
     final appDocDirPath =
         (await path_provider.getApplicationDocumentsDirectory()).path;
@@ -45,6 +56,7 @@ class CoreStoreDirectory {
     return null;
   }
 
+  /// Moves the given database file to the library directory.
   Future<void> _moveDatabaseFileToLibraryDirectory(
     File databaseFileToMove,
   ) async {
@@ -61,6 +73,7 @@ class CoreStoreDirectory {
     await databaseFileToMove.rename(libraryDirectoryDatabaseFilePath);
   }
 
+  /// Returns the path to the application temporary directory.
   Future<String> getTempDirectory() async {
     return (await path_provider.getTemporaryDirectory()).path;
   }

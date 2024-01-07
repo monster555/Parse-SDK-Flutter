@@ -1,3 +1,55 @@
+## [6.3.0](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-6.2.0...dart-6.3.0) (2023-11-11)
+
+### Features
+
+* Add `installationId` in LiveQuery `connect` ([#976](https://github.com/parse-community/Parse-SDK-Flutter/pull/976))
+
+## [6.2.0](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-6.1.0...dart-6.2.0) (2023-10-18)
+
+### Features
+
+* Added `saveEventually` and `deleteEventually` in `ParseObject` ([#911](https://github.com/parse-community/Parse-SDK-Flutter/pull/911))
+
+## [6.1.0](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-6.0.0...dart-6.1.0) (2023-10-17)
+
+### Features
+
+* Add `context` in `ParseObject` ([#970](https://github.com/parse-community/Parse-SDK-Flutter/pull/970))
+
+## [6.0.0](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-5.1.3...dart-6.0.0) (2023-10-16)
+
+### BREAKING CHANGES
+
+* This release removes support for Dart 2.18 ([#969](https://github.com/parse-community/Parse-SDK-Flutter/pull/969))
+
+### Features
+
+* Add support for Dart 3.1, remove support for Dart 2.18 ([#969](https://github.com/parse-community/Parse-SDK-Flutter/pull/969))
+
+## [5.1.3](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-5.1.2...dart-5.1.3) (2023-07-18)
+
+### Bug Fixes
+
+* Malformed JSON in `whereMatchesQuery` ([#955](https://github.com/parse-community/Parse-SDK-Flutter/pull/955))
+
+## [5.1.2](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-5.1.1...dart-5.1.2) (2023-05-29)
+
+### Bug Fixes
+
+* Incorrect results when `ParseQuery` contains special characters ([#866](https://github.com/parse-community/Parse-SDK-Flutter/pull/866))
+
+## [5.1.1](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-5.1.0...dart-5.1.1) (2023-05-20)
+
+### Bug Fixes
+
+* Query conditions `inQuery` and `notInQuery` not working properly ([#869](https://github.com/parse-community/Parse-SDK-Flutter/pull/869))
+
+## [5.1.0](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-5.0.0...dart-5.1.0) (2023-05-14)
+
+### Features
+
+* Downgrade collection dependency to ^1.16.0 for compatibility with Flutter >=3.3 ([#880](https://github.com/parse-community/Parse-SDK-Flutter/pull/880))
+  
 ## [5.0.0](https://github.com/parse-community/Parse-SDK-Flutter/compare/dart-4.0.2...dart-5.0.0) (2023-05-14)
 
 ### BREAKING CHANGES
